@@ -24,7 +24,7 @@ int _atoi(char *s)
 	while (i < len && f == 0)
 	{
 		if (s[i] == '-')
-			++di;
+			++d;
 
 		if (s[i] >= '0' && s[i] <= '9')
 		{
@@ -64,15 +64,13 @@ int main(int argc, char *argv[])
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			for (j = 0; argv[i][j] != '\0'; j++)
-			{
-				if (argv[i][j] > '9' || argv[i][j] < '0')
+			if (argv[i][j] > '9' || argv[i][j] < '0')
 				{
 					puts("Error");
 					return (1);
 				}
-			}
-		}
+		}	
+	}
 
 		for (k = 1; k < argc; k++)
 		{
@@ -85,7 +83,4 @@ int main(int argc, char *argv[])
 
 		printf("%d\n", sum);
 		return (0);
-	}
-
-
-
+}
